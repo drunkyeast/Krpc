@@ -1,8 +1,8 @@
 #include "Krpcapplication.h"
 #include<cstdlib>
-#include<unistd.h>
+#include<unistd.h> // getopt就在这里面, 解析argc和argv命令行参数
 
-Krpcconfig KrpcApplication::m_config;  // 全局配置对象
+Krpcconfig KrpcApplication::m_config;  // 因为Init函数是static函数, 所以m_config也要是static的全局变量(linkage是内部链接属性), 而且init函数是单例模式
 std::mutex KrpcApplication::m_mutex;  // 用于线程安全的互斥锁
 KrpcApplication* KrpcApplication::m_application = nullptr;  // 单例对象指针，初始为空
 
@@ -16,7 +16,7 @@ void KrpcApplication::Init(int argc, char **argv) {
     int o;
     std::string config_file;
     // 使用getopt解析命令行参数，-i表示指定配置文件
-    while (-1 != (o = getopt(argc, argv, "i:"))) {
+    while (-1 != (o = getopt(argc, argv, "i:"))) { // 这里"i:"的含义: 是i需要参数, 例如 "i:p:h" - 表示 -i 和 -p 需要参数，-h 不需要参数.
         switch (o) {
             case 'i':  // 如果参数是-i，后面的值就是配置文件的路径
                 config_file = optarg;  // 将配置文件路径保存到config_file

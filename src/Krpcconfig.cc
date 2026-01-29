@@ -1,15 +1,20 @@
 #include "Krpcconfig.h"
+#include <iostream>
 #include "memory"
 
+// 这个写得有点蠢, 施磊是纯C写法, 这个是C和C++混合写法(可读性好差), 完全可以写成C++的IO读取啊. 性能上面又无所谓, 配置文件有不经常读写.
+// 关于C++的IO, 我记得初心老哥讲过最标准的写法, mark一下回头可以看看. 不过这些内容并不是我学RPC和写项目需要的, 边缘知识. 面试官也不会问.
 // 加载配置文件，解析配置文件中的键值对
 void Krpcconfig::LoadConfigFile(const char *config_file) {
     // 使用智能指针管理文件指针，确保文件在退出时自动关闭
+    // std::unique_ptr<T, Deleter> 还有这个语法, 指定自定义的删除器, 这里就是fclose
     std::unique_ptr<FILE, decltype(&fclose)> pf(
         fopen(config_file, "r"),  // 打开配置文件
         &fclose  // 文件关闭函数
     );
 
     if (pf == nullptr) {  // 如果文件打开失败
+        std::cout << "配置文件打开失败: " << config_file << std::endl;
         exit(EXIT_FAILURE);  // 退出程序
     }
 
@@ -37,11 +42,12 @@ void Krpcconfig::LoadConfigFile(const char *config_file) {
         Trim(value);  // 去掉value前后的空格
 
         // 将键值对存入配置map中
-        config_map.insert({key, value});
+        config_map.insert({key, value}); // 注意: 这里用config_map[key] = value也是合理的.
     }
 }
 
-// 根据key查找对应的value
+// 这个Load函数就是根据key查找对应的value, 就相当于return config_map[key]; 但用[]不好, 如果key不存在会往map里插入空串.
+// 补充: 这个语法我还不知道: 对！std::map::insert() 如果 key 已存在，不会覆盖，保持原值！
 std::string Krpcconfig::Load(const std::string &key) {
     auto it = config_map.find(key);  // 在map中查找key
     if (it == config_map.end()) {  // 如果未找到

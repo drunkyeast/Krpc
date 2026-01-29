@@ -1,0 +1,58 @@
+syntax = "proto3"; // 声明了protobuf的版本
+
+package fixbug; // 声明了代码所在包(对C++来说是namespace)
+
+// 定义下面的选项, 表示生成service服务类和rpc方法描述, 默认不生成.
+option cc_generic_services=true;
+
+message ResultCode
+{
+    int32 errcode = 1;
+    string errmsg = 2;
+}
+
+// 定义登录请求消息类型 name pwd
+message LoginRequest
+{
+    string name = 1;
+    string pwd = 2;
+}
+
+// 定义登录响应消息类型
+message LoginResponse
+{
+    ResultCode result = 1;
+    bool success = 2;
+}
+
+message  GetFriendListsRequest
+{
+    uint32 userid = 1;
+}
+
+message User
+{
+    bytes name = 1;
+    uint32 age = 2;
+    enum Gender // 这个与C++11以前的枚举一样. User::MAN来访问, 不能带Gender作用域. 
+    // 补充语法知识: 而现代C++推荐用enum class Gender, User::Gender::MAN来访问, 必须带Gender作用域.
+    {
+        MAN = 0;
+        WOMAN = 1;
+    }
+    Gender gender = 3;
+}
+
+message GetFriendListsResponse
+{
+    ResultCode result = 1;
+    repeated User friend_list = 2; // repeated表示列表, 对应C++的vector<User>
+}
+
+// 在protobuf里面怎么定义描述rpc方法的类型 - service
+// 注意, protobuf本身不支持rpc功能, 只有对rpc的描述. 序列化与反序列化
+service UserServiceRpc // UserServiceRpc也是一个class类
+{
+    rpc Login(LoginRequest) returns(LoginResponse);
+    rpc GetFriendLists(GetFriendListsRequest) returns(GetFriendListsResponse);
+}

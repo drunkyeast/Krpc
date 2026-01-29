@@ -41,7 +41,7 @@ public:
         response->set_success(login_result);  // 设置登录结果
 
         // 执行回调操作，框架会自动将响应序列化并发送给调用者
-        done->Run();
+        done->Run(); // 这个Run就不是provider里面自定义命名的, 而是Protobuf提供的Closure/回调相关的方法名.
     }
 };
 

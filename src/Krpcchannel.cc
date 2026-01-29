@@ -62,7 +62,7 @@ void KrpcChannel::CallMethod(const ::google::protobuf::MethodDescriptor *method,
     }  // endif
 
      // 2. 序列化请求参数
-    std::string args_str;
+    std::string args_str; // 把request里面序列化到args_str中.
     if (!request->SerializeToString(&args_str)) {
         controller->SetFailed("serialize request fail");
         return;
@@ -91,7 +91,7 @@ void KrpcChannel::CallMethod(const ::google::protobuf::MethodDescriptor *method,
     uint32_t net_header_len = htonl(header_size);
 
     std::string send_rpc_str;
-    send_rpc_str.reserve(4 + 4 + header_size + args_str.size());
+    send_rpc_str.reserve(4 + 4 + header_size + args_str.size()); // 确定空间, 这个做法还算不错的了. string_view没有帮助.
     
     send_rpc_str.append((char*)&net_total_len, 4);
     send_rpc_str.append((char*)&net_header_len, 4);
@@ -106,9 +106,11 @@ void KrpcChannel::CallMethod(const ::google::protobuf::MethodDescriptor *method,
         return;
     }
 
-    // 5. 接收响应
+    // 5. 接收响应.
     // 格式：[4B Total Len] + [Response Data]
-    
+    // 简单来说一行recv就够了, 但是因为TCP没有消息边界, 粘包半包问题, 所以写的这么复杂.
+    // 此外还要考虑,
+
     // A. 先读4字节长度头
     uint32_t response_len = 0;
     if (recv_exact(m_clientfd, (char*)&response_len, 4) != 4) {
@@ -117,10 +119,10 @@ void KrpcChannel::CallMethod(const ::google::protobuf::MethodDescriptor *method,
         controller->SetFailed("recv response length error");
         return;
     }
-    response_len = ntohl(response_len); // 转回主机字节序
+    response_len = ntohl(response_len); // 转回主机字节序, 网络是大端序.
 
     // B. 根据长度读取Body
-    std::vector<char> recv_buf(response_len);
+    std::vector<char> recv_buf(response_len); // 用vector<char>而不是string, 语义更明确, 表示二进制缓冲区. 不能用array, array是编译器确定长度的.
     if (recv_exact(m_clientfd, recv_buf.data(), response_len) != response_len) {
         close(m_clientfd);
         m_clientfd = -1;

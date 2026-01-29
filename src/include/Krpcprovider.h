@@ -20,7 +20,7 @@ public:
     //启动rpc服务节点，开始提供rpc远程网络调用服务
     void Run();
 private:
-    muduo::net::EventLoop event_loop;
+    muduo::net::EventLoop event_loop; // muduo::net::TcpServer写到run里面去了, 但event_loop不行, 结束的时候要处理
     struct ServiceInfo
     {
         google::protobuf::Service* service;

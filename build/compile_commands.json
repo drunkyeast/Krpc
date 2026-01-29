@@ -1,0 +1,77 @@
+[
+{
+  "directory": "/root/Krpc/build/src",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/krpc_core.dir/Krpcapplication.cc.o -c /root/Krpc/src/Krpcapplication.cc",
+  "file": "/root/Krpc/src/Krpcapplication.cc"
+},
+{
+  "directory": "/root/Krpc/build/src",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/krpc_core.dir/Krpcchannel.cc.o -c /root/Krpc/src/Krpcchannel.cc",
+  "file": "/root/Krpc/src/Krpcchannel.cc"
+},
+{
+  "directory": "/root/Krpc/build/src",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/krpc_core.dir/Krpcconfig.cc.o -c /root/Krpc/src/Krpcconfig.cc",
+  "file": "/root/Krpc/src/Krpcconfig.cc"
+},
+{
+  "directory": "/root/Krpc/build/src",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/krpc_core.dir/Krpccontroller.cc.o -c /root/Krpc/src/Krpccontroller.cc",
+  "file": "/root/Krpc/src/Krpccontroller.cc"
+},
+{
+  "directory": "/root/Krpc/build/src",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/krpc_core.dir/Krpcheader.pb.cc.o -c /root/Krpc/src/Krpcheader.pb.cc",
+  "file": "/root/Krpc/src/Krpcheader.pb.cc"
+},
+{
+  "directory": "/root/Krpc/build/src",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/krpc_core.dir/Krpcprovider.cc.o -c /root/Krpc/src/Krpcprovider.cc",
+  "file": "/root/Krpc/src/Krpcprovider.cc"
+},
+{
+  "directory": "/root/Krpc/build/src",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/krpc_core.dir/zookeeperutil.cc.o -c /root/Krpc/src/zookeeperutil.cc",
+  "file": "/root/Krpc/src/zookeeperutil.cc"
+},
+{
+  "directory": "/root/Krpc/build/example/callee",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/server.dir/Kserver.cc.o -c /root/Krpc/example/callee/Kserver.cc",
+  "file": "/root/Krpc/example/callee/Kserver.cc"
+},
+{
+  "directory": "/root/Krpc/build/example/callee",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/server.dir/__/user.pb.cc.o -c /root/Krpc/example/user.pb.cc",
+  "file": "/root/Krpc/example/user.pb.cc"
+},
+{
+  "directory": "/root/Krpc/build/example/caller",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/client.dir/Kclient.cc.o -c /root/Krpc/example/caller/Kclient.cc",
+  "file": "/root/Krpc/example/caller/Kclient.cc"
+},
+{
+  "directory": "/root/Krpc/build/example/caller",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/client.dir/__/user.pb.cc.o -c /root/Krpc/example/user.pb.cc",
+  "file": "/root/Krpc/example/user.pb.cc"
+},
+{
+  "directory": "/root/Krpc/build/example2/callee",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/test_server.dir/userservice.cc.o -c /root/Krpc/example2/callee/userservice.cc",
+  "file": "/root/Krpc/example2/callee/userservice.cc"
+},
+{
+  "directory": "/root/Krpc/build/example2/callee",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/test_server.dir/__/user.pb.cc.o -c /root/Krpc/example2/user.pb.cc",
+  "file": "/root/Krpc/example2/user.pb.cc"
+},
+{
+  "directory": "/root/Krpc/build/example2/caller",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/test_client.dir/calluserservice.cc.o -c /root/Krpc/example2/caller/calluserservice.cc",
+  "file": "/root/Krpc/example2/caller/calluserservice.cc"
+},
+{
+  "directory": "/root/Krpc/build/example2/caller",
+  "command": "/usr/bin/g++  -I/root/Krpc/src/include -g -O0 -std=c++11 -Wall -std=gnu++11 -o CMakeFiles/test_client.dir/__/user.pb.cc.o -c /root/Krpc/example2/user.pb.cc",
+  "file": "/root/Krpc/example2/user.pb.cc"
+}
+]

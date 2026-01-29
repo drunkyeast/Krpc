@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package fixbug;
+
+option cc_generic_services=true;
+// option java_generic_services=true;
+
+message ResultCode
+{
+    int32 errcode = 1;
+    string errmsg = 2;
+}
+
+message LoginRequest
+{
+    string name = 1;
+    string pwd = 2;
+    // ResultCode result = 3;
+}
+
+message LoginResponse
+{
+    ResultCode result = 1;
+    bool success = 2;
+}
+
+service UserServiceRpc // 只写这个还不够, 需要在开头加一个option
+{
+    rpc Login(LoginRequest) returns(LoginResponse);
+}

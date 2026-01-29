@@ -55,7 +55,7 @@ void KrpcProvider::Run() {
     // 创建TcpServer对象
     std::shared_ptr<muduo::net::TcpServer> server = std::make_shared<muduo::net::TcpServer>(&event_loop, address, "KrpcProvider");
 
-    // 绑定连接回调和消息回调，分离网络连接业务和消息处理业务
+    // 绑定连接回调和消息回调，分离网络连接业务和消息处理业务(这就是muduo库的好处!!)
     server->setConnectionCallback(std::bind(&KrpcProvider::OnConnection, this, std::placeholders::_1));
     server->setMessageCallback(std::bind(&KrpcProvider::OnMessage, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 
@@ -63,6 +63,7 @@ void KrpcProvider::Run() {
     server->setThreadNum(4);
 
     // 将当前RPC节点上要发布的服务全部注册到ZooKeeper上，让RPC客户端可以在ZooKeeper上发现服务
+    // session timeout的1/3 发送心跳包. 可以用 tcpdump -i lo port 2181 去抓包看看, 
     ZkClient zkclient;
     zkclient.Start();  // 连接ZooKeeper服务器
     // service_name为永久节点，method_name为临时节点
@@ -96,6 +97,7 @@ void KrpcProvider::OnConnection(const muduo::net::TcpConnectionPtr &conn) {
 }
 
 // 消息回调函数，处理客户端发送的RPC请求
+// 从客户端发送RPC请求中解析出service_name, method_name, args_size, 服务器找到对应的service和method, 构建request, 并调用Login等等, 得到response, 再返回(设置回调).
 void KrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr &conn, muduo::net::Buffer *buffer, muduo::Timestamp receive_time) {
     std::cout << "OnMessage" << std::endl;
 
@@ -145,6 +147,14 @@ void KrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr &conn, muduo::ne
         std::string service_name = krpcHeader.service_name();
         std::string method_name = krpcHeader.method_name();
 
+        // ===============================================================================================
+        // 中场休息, OnMessage前半部分就是从网络字节流中, 提取出service_name method_name args_str 这三部分
+        // 然后找到Service对象, MethodDescriptor对象, 创建空的Message对象即request/response, 并用args_str填充到request中.
+        // 再创建Closure回调, 绑定SendRpcResponse, 最后调用CallMethod. CallMethod的具体流程见后面分析.
+        // ===============================================================================================
+
+
+
         auto it = service_map.find(service_name);
         if (it == service_map.end()) {
             std::cout << service_name << " is not exist!" << std::endl;
@@ -156,8 +166,8 @@ void KrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr &conn, muduo::ne
             return;
         }
 
-        google::protobuf::Service *service = it->second.service;
-        const google::protobuf::MethodDescriptor *method = mit->second;
+        google::protobuf::Service *service = it->second.service; // service对象 UserService
+        const google::protobuf::MethodDescriptor *method = mit->second; // method对象 Login
 
         google::protobuf::Message *request = service->GetRequestPrototype(method).New();
         if (!request->ParseFromString(args_str)) {
@@ -172,6 +182,14 @@ void KrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr &conn, muduo::ne
                                                                                                      &KrpcProvider::SendRpcResponse,
                                                                                                      conn, response);
         service->CallMethod(method, nullptr, request, response, done);
+        // ===============================================================================================
+        // 梳理CallMethod之后的逻辑: Service->UserServiceRpc->UserService, 这是三层关系.
+        // Service申明了CallMethod这个纯虚函数, UserServiceRpc来重写(Protobuf自己干的, 我不用管).
+        // UserServiceRpc又申明定义了Login虚函数, UserService重写了这个虚函数. 
+        // 所以通过Service对象调用CallMethod, 会先触发UserServiceRpc的CallMethod, 然后触发Login函数.
+        // CallMethod和Login都是Protobuf生成的, 参数非常像, CallMethod只是多了一个method(通过method->index()去找到对应的Login方法), 
+        // 后面四个controller/request/response/done都一样.
+        // ===============================================================================================
     }
 }
 
@@ -195,6 +213,28 @@ void KrpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr &conn, goo
     } else {
         std::cout << "serialize response error!" << std::endl;
     }
+
+    // conn->shutdown();  // 短连接或长连接, Krpc没有这一行.
+
+    /*
+    可做如下优化. 避免多余拷贝.
+    // 1. 先计算序列化后的大小
+    int byte_size = response->ByteSizeLong();
+    
+    // 2. 一次性分配完整空间（4字节长度 + 数据）
+    std::string send_buf;
+    send_buf.resize(4 + byte_size);
+    
+    // 3. 先写入长度
+    uint32_t net_len = htonl(byte_size);
+    std::memcpy(&send_buf[0], &net_len, 4);
+    
+    // 4. ✅ 直接序列化到目标位置（避免中间拷贝！）
+    response->SerializeToArray(&send_buf[4], byte_size);
+    
+    // 5. 发送
+    conn->send(send_buf);
+    */
 }
 
 // 析构函数，退出事件循环

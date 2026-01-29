@@ -14,6 +14,8 @@ void global_watcher(zhandle_t *zh, int type, int status, const char *path, void 
         if (status == ZOO_CONNECTED_STATE) {  // ZooKeeper客户端和服务器连接成功
             std::lock_guard<std::mutex> lock(cv_mutex);  // 加锁保护
             is_connected = true;  // 标记连接成功
+
+            // 施磊是用的sem_post, 信号量+1
         }
     }
     cv.notify_all();  // 通知所有等待的线程
@@ -44,12 +46,15 @@ void ZkClient::Start() {
     3. watcher回调线程（使用pthread_create）
     */
 
-    // 使用zookeeper_init初始化一个ZooKeeper客户端对象，异步建立与服务器的连接
+    // 使用zookeeper_init初始化一个ZooKeeper客户端对象，异步建立与服务器的连接.
+    // 这个zookeeper_init是异步的, 可以点进去看看英文描述. 注册global_watcher这一回调.
     m_zhandle = zookeeper_init(connstr.c_str(), global_watcher, 6000, nullptr, nullptr, 0);
-    if (nullptr == m_zhandle) {  // 初始化失败
+    if (nullptr == m_zhandle) {  // 初始化失败, 这个只是看内存是否开辟成功, 连接是否成功在回调里面.
         LOG(ERROR) << "zookeeper_init error";
         exit(EXIT_FAILURE);  // 退出程序
     }
+
+    // 注意: 施磊一开始用的是信号量和sem_wait, 信号量-1,  被Krpc改成了锁和条件变量.
 
     // 等待连接成功
     std::unique_lock<std::mutex> lock(cv_mutex);

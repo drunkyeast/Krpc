@@ -10,10 +10,11 @@ public:
     KrpcChannel(bool connectNow);
     virtual ~KrpcChannel()
     {
-          if (m_clientfd >= 0) {
-        close(m_clientfd);
-    }  
+        if (m_clientfd >= 0) {
+            close(m_clientfd);
+        }  
     }
+    // 所有通过stub代理对象调用的rpc方法, 都走到了这里, 统一做rpc方法调用的数据序列化和网络发送.
     void CallMethod(const ::google::protobuf::MethodDescriptor *method,
                     ::google::protobuf::RpcController *controller,
                     const ::google::protobuf::Message *request,

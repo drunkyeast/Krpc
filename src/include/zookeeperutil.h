@@ -15,7 +15,7 @@ public:
     void Start();
     //在zkserver中创建一个节点，根据指定的path
     void Create(const char* path,const char* data,int datalen,int state=0);
-    //根据参数指定的znode节点路径，或者znode节点值
+    //根据参数指定的znode节点路径，获取znode节点值
     std::string GetData(const char* path);
 private:
     //Zk的客户端句柄
