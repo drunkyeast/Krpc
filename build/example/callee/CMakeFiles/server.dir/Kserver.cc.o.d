@@ -1,5 +1,5 @@
 example/callee/CMakeFiles/server.dir/Kserver.cc.o: \
- /root/Krpc/example/callee/Kserver.cc /usr/include/stdc-predef.h \
+ /root/Krpc-all/Krpc/example/callee/Kserver.cc /usr/include/stdc-predef.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -11,8 +11,9 @@ example/callee/CMakeFiles/server.dir/Kserver.cc.o: \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h \
- /usr/include/c++/11/ostream /usr/include/c++/11/ios \
- /usr/include/c++/11/iosfwd /usr/include/c++/11/bits/stringfwd.h \
+ /usr/include/c++/11/pstl/pstl_config.h /usr/include/c++/11/ostream \
+ /usr/include/c++/11/ios /usr/include/c++/11/iosfwd \
+ /usr/include/c++/11/bits/stringfwd.h \
  /usr/include/c++/11/bits/memoryfwd.h /usr/include/c++/11/bits/postypes.h \
  /usr/include/c++/11/cwchar /usr/include/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
@@ -104,7 +105,9 @@ example/callee/CMakeFiles/server.dir/Kserver.cc.o: \
  /usr/include/c++/11/bits/basic_string.h \
  /usr/include/c++/11/ext/alloc_traits.h \
  /usr/include/c++/11/bits/alloc_traits.h \
- /usr/include/c++/11/bits/stl_construct.h \
+ /usr/include/c++/11/bits/stl_construct.h /usr/include/c++/11/string_view \
+ /usr/include/c++/11/bits/functional_hash.h \
+ /usr/include/c++/11/bits/string_view.tcc \
  /usr/include/c++/11/ext/string_conversions.h /usr/include/c++/11/cstdlib \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -127,7 +130,6 @@ example/callee/CMakeFiles/server.dir/Kserver.cc.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
- /usr/include/c++/11/bits/functional_hash.h \
  /usr/include/c++/11/bits/basic_string.tcc \
  /usr/include/c++/11/bits/locale_classes.tcc \
  /usr/include/c++/11/system_error \
@@ -144,8 +146,8 @@ example/callee/CMakeFiles/server.dir/Kserver.cc.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /root/Krpc/example/callee/../user.pb.h /usr/include/c++/11/limits \
- /usr/include/google/protobuf/port_def.inc \
+ /root/Krpc-all/Krpc/example/callee/../user.pb.h \
+ /usr/include/c++/11/limits /usr/include/google/protobuf/port_def.inc \
  /usr/include/google/protobuf/port_undef.inc \
  /usr/include/google/protobuf/io/coded_stream.h /usr/include/assert.h \
  /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_base.h \
@@ -198,29 +200,39 @@ example/callee/CMakeFiles/server.dir/Kserver.cc.o: \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
- /usr/include/c++/11/bits/uniform_int_dist.h /usr/include/c++/11/map \
- /usr/include/c++/11/bits/stl_tree.h \
- /usr/include/c++/11/ext/aligned_buffer.h \
- /usr/include/c++/11/bits/stl_map.h /usr/include/c++/11/tuple \
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /usr/include/c++/11/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/11/functional /usr/include/c++/11/tuple \
  /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
- /usr/include/c++/11/bits/invoke.h \
- /usr/include/c++/11/bits/stl_multimap.h \
- /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/memory \
+ /usr/include/c++/11/bits/invoke.h /usr/include/c++/11/bits/refwrap.h \
+ /usr/include/c++/11/bits/std_function.h \
+ /usr/include/c++/11/unordered_map \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/unordered_map.h \
+ /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/vector \
  /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/stl_vector.h \
+ /usr/include/c++/11/bits/stl_bvector.h \
+ /usr/include/c++/11/bits/vector.tcc \
+ /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/map \
+ /usr/include/c++/11/bits/stl_tree.h /usr/include/c++/11/bits/stl_map.h \
+ /usr/include/c++/11/bits/stl_multimap.h /usr/include/c++/11/memory \
  /usr/include/c++/11/bits/stl_raw_storage_iter.h \
  /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
  /usr/include/c++/11/bits/unique_ptr.h \
  /usr/include/c++/11/bits/shared_ptr.h \
  /usr/include/c++/11/bits/shared_ptr_base.h \
  /usr/include/c++/11/bits/allocated_ptr.h \
- /usr/include/c++/11/bits/refwrap.h /usr/include/c++/11/ext/concurrence.h \
+ /usr/include/c++/11/ext/concurrence.h \
  /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/backward/auto_ptr.h /usr/include/c++/11/set \
+ /usr/include/c++/11/backward/auto_ptr.h \
+ /usr/include/c++/11/pstl/glue_memory_defs.h /usr/include/c++/11/set \
  /usr/include/c++/11/bits/stl_set.h \
- /usr/include/c++/11/bits/stl_multiset.h /usr/include/c++/11/vector \
- /usr/include/c++/11/bits/stl_vector.h \
- /usr/include/c++/11/bits/stl_bvector.h \
- /usr/include/c++/11/bits/vector.tcc \
+ /usr/include/c++/11/bits/stl_multiset.h \
  /usr/include/google/protobuf/stubs/port.h /usr/include/c++/11/stdlib.h \
  /usr/include/google/protobuf/stubs/platform_macros.h \
  /usr/include/byteswap.h /usr/include/google/protobuf/stubs/macros.h \
@@ -228,10 +240,6 @@ example/callee/CMakeFiles/server.dir/Kserver.cc.o: \
  /usr/include/google/protobuf/stubs/strutil.h \
  /usr/include/google/protobuf/stubs/stringpiece.h \
  /usr/include/google/protobuf/stubs/hash.h \
- /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/unordered_map.h \
  /usr/include/c++/11/unordered_set \
  /usr/include/c++/11/bits/unordered_set.h \
  /usr/include/google/protobuf/port.h /usr/include/google/protobuf/arena.h \
@@ -273,9 +281,10 @@ example/callee/CMakeFiles/server.dir/Kserver.cc.o: \
  /usr/include/google/protobuf/message.h \
  /usr/include/google/protobuf/extension_set.h /usr/include/c++/11/cassert \
  /usr/include/google/protobuf/service.h \
- /root/Krpc/src/include/Krpcapplication.h \
- /root/Krpc/src/include/Krpcconfig.h /root/Krpc/src/include/Krpcchannel.h \
- /root/Krpc/src/include/zookeeperutil.h /usr/include/semaphore.h \
+ /root/Krpc-all/Krpc/include/Krpcapplication.h \
+ /root/Krpc-all/Krpc/include/Krpcconfig.h \
+ /root/Krpc-all/Krpc/include/Krpcchannel.h \
+ /root/Krpc-all/Krpc/include/zookeeperutil.h /usr/include/semaphore.h \
  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
  /usr/include/zookeeper/zookeeper.h \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
@@ -298,62 +307,26 @@ example/callee/CMakeFiles/server.dir/Kserver.cc.o: \
  /usr/include/zookeeper/zookeeper_version.h \
  /usr/include/zookeeper/recordio.h \
  /usr/include/zookeeper/zookeeper.jute.h \
- /root/Krpc/src/include/Krpccontroller.h \
- /root/Krpc/src/include/Krpcprovider.h /usr/include/muduo/net/TcpServer.h \
- /usr/include/muduo/base/Atomic.h /usr/include/muduo/base/noncopyable.h \
- /usr/include/muduo/base/Types.h /usr/include/muduo/net/TcpConnection.h \
- /usr/include/muduo/base/StringPiece.h /usr/include/muduo/net/Callbacks.h \
- /usr/include/muduo/base/Timestamp.h /usr/include/muduo/base/copyable.h \
- /usr/include/boost/operators.hpp /usr/include/boost/config.hpp \
- /usr/include/boost/config/user.hpp \
- /usr/include/boost/config/detail/select_compiler_config.hpp \
- /usr/include/boost/config/compiler/gcc.hpp \
- /usr/include/boost/config/detail/select_stdlib_config.hpp \
- /usr/include/c++/11/version \
- /usr/include/boost/config/stdlib/libstdcpp3.hpp \
- /usr/include/boost/config/detail/select_platform_config.hpp \
- /usr/include/boost/config/platform/linux.hpp \
- /usr/include/boost/config/detail/posix_features.hpp \
- /usr/include/boost/config/detail/suffix.hpp \
- /usr/include/boost/config/helper_macros.hpp \
- /usr/include/boost/detail/workaround.hpp \
- /usr/include/boost/config/workaround.hpp \
- /usr/include/boost/core/addressof.hpp /usr/include/c++/11/functional \
- /usr/include/c++/11/bits/std_function.h /usr/include/muduo/net/Buffer.h \
- /usr/include/muduo/net/Endian.h /usr/include/muduo/net/InetAddress.h \
- /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/bits/in.h \
- /usr/include/boost/any.hpp /usr/include/boost/type_index.hpp \
- /usr/include/boost/type_index/stl_type_index.hpp \
- /usr/include/boost/type_index/type_index_facade.hpp \
- /usr/include/boost/container_hash/hash_fwd.hpp \
- /usr/include/boost/static_assert.hpp \
- /usr/include/boost/throw_exception.hpp \
- /usr/include/boost/assert/source_location.hpp \
- /usr/include/boost/current_function.hpp /usr/include/boost/cstdint.hpp \
- /usr/include/boost/exception/exception.hpp \
- /usr/include/boost/core/demangle.hpp /usr/include/c++/11/cxxabi.h \
- /usr/include/x86_64-linux-gnu/c++/11/bits/cxxabi_tweaks.h \
- /usr/include/boost/type_traits/conditional.hpp \
- /usr/include/boost/type_traits/is_const.hpp \
- /usr/include/boost/type_traits/integral_constant.hpp \
- /usr/include/boost/type_traits/is_reference.hpp \
- /usr/include/boost/type_traits/is_lvalue_reference.hpp \
- /usr/include/boost/type_traits/is_rvalue_reference.hpp \
- /usr/include/boost/type_traits/is_volatile.hpp \
- /usr/include/boost/type_traits/remove_cv.hpp \
- /usr/include/boost/type_traits/remove_reference.hpp \
- /usr/include/boost/type_traits/decay.hpp \
- /usr/include/boost/type_traits/is_array.hpp \
- /usr/include/boost/type_traits/is_function.hpp \
- /usr/include/boost/type_traits/detail/config.hpp \
- /usr/include/boost/version.hpp \
- /usr/include/boost/type_traits/detail/is_function_cxx_11.hpp \
- /usr/include/boost/type_traits/remove_bounds.hpp \
- /usr/include/boost/type_traits/remove_extent.hpp \
- /usr/include/boost/type_traits/add_pointer.hpp \
- /usr/include/boost/type_traits/add_reference.hpp \
- /usr/include/boost/utility/enable_if.hpp \
- /usr/include/boost/core/enable_if.hpp \
- /usr/include/boost/type_traits/is_same.hpp \
- /usr/include/muduo/net/EventLoop.h /usr/include/muduo/base/Mutex.h \
- /usr/include/muduo/base/CurrentThread.h /usr/include/muduo/net/TimerId.h
+ /root/Krpc-all/Krpc/include/Krpccontroller.h \
+ /root/Krpc-all/Krpc/include/Krpcprovider.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/TcpServer.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/EventLoop.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/noncopyable.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/Timestamp.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/CurrentThread.h \
+ /usr/include/x86_64-linux-gnu/sys/syscall.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+ /usr/include/x86_64-linux-gnu/bits/syscall.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/Acceptor.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/Socket.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/Channel.h \
+ /usr/include/x86_64-linux-gnu/sys/epoll.h \
+ /usr/include/x86_64-linux-gnu/bits/epoll.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/InetAddress.h \
+ /usr/include/arpa/inet.h /usr/include/netinet/in.h \
+ /usr/include/x86_64-linux-gnu/bits/in.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/EventLoopThreadPool.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/Callbacks.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/TcpConnection.h \
+ /root/Krpc-all/Krpc/thirdparty/muduo-cpp17/include/Buffer.h

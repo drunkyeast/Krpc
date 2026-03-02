@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/Krpc
+CMAKE_SOURCE_DIR = /root/Krpc-all/Krpc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/Krpc/build
+CMAKE_BINARY_DIR = /root/Krpc-all/Krpc/build
 
 # Include any dependencies generated for this target.
 include example/caller/CMakeFiles/client.dir/depend.make
@@ -72,30 +72,30 @@ include example/caller/CMakeFiles/client.dir/flags.make
 example/caller/CMakeFiles/client.dir/Kclient.cc.o: example/caller/CMakeFiles/client.dir/flags.make
 example/caller/CMakeFiles/client.dir/Kclient.cc.o: ../example/caller/Kclient.cc
 example/caller/CMakeFiles/client.dir/Kclient.cc.o: example/caller/CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/caller/CMakeFiles/client.dir/Kclient.cc.o"
-	cd /root/Krpc/build/example/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/caller/CMakeFiles/client.dir/Kclient.cc.o -MF CMakeFiles/client.dir/Kclient.cc.o.d -o CMakeFiles/client.dir/Kclient.cc.o -c /root/Krpc/example/caller/Kclient.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc-all/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/caller/CMakeFiles/client.dir/Kclient.cc.o"
+	cd /root/Krpc-all/Krpc/build/example/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/caller/CMakeFiles/client.dir/Kclient.cc.o -MF CMakeFiles/client.dir/Kclient.cc.o.d -o CMakeFiles/client.dir/Kclient.cc.o -c /root/Krpc-all/Krpc/example/caller/Kclient.cc
 
 example/caller/CMakeFiles/client.dir/Kclient.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/Kclient.cc.i"
-	cd /root/Krpc/build/example/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc/example/caller/Kclient.cc > CMakeFiles/client.dir/Kclient.cc.i
+	cd /root/Krpc-all/Krpc/build/example/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc-all/Krpc/example/caller/Kclient.cc > CMakeFiles/client.dir/Kclient.cc.i
 
 example/caller/CMakeFiles/client.dir/Kclient.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/Kclient.cc.s"
-	cd /root/Krpc/build/example/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc/example/caller/Kclient.cc -o CMakeFiles/client.dir/Kclient.cc.s
+	cd /root/Krpc-all/Krpc/build/example/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc-all/Krpc/example/caller/Kclient.cc -o CMakeFiles/client.dir/Kclient.cc.s
 
 example/caller/CMakeFiles/client.dir/__/user.pb.cc.o: example/caller/CMakeFiles/client.dir/flags.make
 example/caller/CMakeFiles/client.dir/__/user.pb.cc.o: ../example/user.pb.cc
 example/caller/CMakeFiles/client.dir/__/user.pb.cc.o: example/caller/CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example/caller/CMakeFiles/client.dir/__/user.pb.cc.o"
-	cd /root/Krpc/build/example/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/caller/CMakeFiles/client.dir/__/user.pb.cc.o -MF CMakeFiles/client.dir/__/user.pb.cc.o.d -o CMakeFiles/client.dir/__/user.pb.cc.o -c /root/Krpc/example/user.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc-all/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example/caller/CMakeFiles/client.dir/__/user.pb.cc.o"
+	cd /root/Krpc-all/Krpc/build/example/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/caller/CMakeFiles/client.dir/__/user.pb.cc.o -MF CMakeFiles/client.dir/__/user.pb.cc.o.d -o CMakeFiles/client.dir/__/user.pb.cc.o -c /root/Krpc-all/Krpc/example/user.pb.cc
 
 example/caller/CMakeFiles/client.dir/__/user.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/__/user.pb.cc.i"
-	cd /root/Krpc/build/example/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc/example/user.pb.cc > CMakeFiles/client.dir/__/user.pb.cc.i
+	cd /root/Krpc-all/Krpc/build/example/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc-all/Krpc/example/user.pb.cc > CMakeFiles/client.dir/__/user.pb.cc.i
 
 example/caller/CMakeFiles/client.dir/__/user.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/__/user.pb.cc.s"
-	cd /root/Krpc/build/example/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc/example/user.pb.cc -o CMakeFiles/client.dir/__/user.pb.cc.s
+	cd /root/Krpc-all/Krpc/build/example/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc-all/Krpc/example/user.pb.cc -o CMakeFiles/client.dir/__/user.pb.cc.s
 
 # Object files for target client
 client_OBJECTS = \
@@ -108,20 +108,20 @@ client_EXTERNAL_OBJECTS =
 ../bin/client: example/caller/CMakeFiles/client.dir/Kclient.cc.o
 ../bin/client: example/caller/CMakeFiles/client.dir/__/user.pb.cc.o
 ../bin/client: example/caller/CMakeFiles/client.dir/build.make
-../bin/client: src/libkrpc_core.a
+../bin/client: ../lib/libkrpc_core.a
 ../bin/client: example/caller/CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../bin/client"
-	cd /root/Krpc/build/example/caller && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/Krpc-all/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../bin/client"
+	cd /root/Krpc-all/Krpc/build/example/caller && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/caller/CMakeFiles/client.dir/build: ../bin/client
 .PHONY : example/caller/CMakeFiles/client.dir/build
 
 example/caller/CMakeFiles/client.dir/clean:
-	cd /root/Krpc/build/example/caller && $(CMAKE_COMMAND) -P CMakeFiles/client.dir/cmake_clean.cmake
+	cd /root/Krpc-all/Krpc/build/example/caller && $(CMAKE_COMMAND) -P CMakeFiles/client.dir/cmake_clean.cmake
 .PHONY : example/caller/CMakeFiles/client.dir/clean
 
 example/caller/CMakeFiles/client.dir/depend:
-	cd /root/Krpc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Krpc /root/Krpc/example/caller /root/Krpc/build /root/Krpc/build/example/caller /root/Krpc/build/example/caller/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/Krpc-all/Krpc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Krpc-all/Krpc /root/Krpc-all/Krpc/example/caller /root/Krpc-all/Krpc/build /root/Krpc-all/Krpc/build/example/caller /root/Krpc-all/Krpc/build/example/caller/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/caller/CMakeFiles/client.dir/depend
 

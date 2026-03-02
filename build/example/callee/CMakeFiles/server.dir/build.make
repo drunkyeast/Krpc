@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/Krpc
+CMAKE_SOURCE_DIR = /root/Krpc-all/Krpc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/Krpc/build
+CMAKE_BINARY_DIR = /root/Krpc-all/Krpc/build
 
 # Include any dependencies generated for this target.
 include example/callee/CMakeFiles/server.dir/depend.make
@@ -72,30 +72,30 @@ include example/callee/CMakeFiles/server.dir/flags.make
 example/callee/CMakeFiles/server.dir/Kserver.cc.o: example/callee/CMakeFiles/server.dir/flags.make
 example/callee/CMakeFiles/server.dir/Kserver.cc.o: ../example/callee/Kserver.cc
 example/callee/CMakeFiles/server.dir/Kserver.cc.o: example/callee/CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/callee/CMakeFiles/server.dir/Kserver.cc.o"
-	cd /root/Krpc/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/callee/CMakeFiles/server.dir/Kserver.cc.o -MF CMakeFiles/server.dir/Kserver.cc.o.d -o CMakeFiles/server.dir/Kserver.cc.o -c /root/Krpc/example/callee/Kserver.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc-all/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example/callee/CMakeFiles/server.dir/Kserver.cc.o"
+	cd /root/Krpc-all/Krpc/build/example/callee && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/callee/CMakeFiles/server.dir/Kserver.cc.o -MF CMakeFiles/server.dir/Kserver.cc.o.d -o CMakeFiles/server.dir/Kserver.cc.o -c /root/Krpc-all/Krpc/example/callee/Kserver.cc
 
 example/callee/CMakeFiles/server.dir/Kserver.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/Kserver.cc.i"
-	cd /root/Krpc/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc/example/callee/Kserver.cc > CMakeFiles/server.dir/Kserver.cc.i
+	cd /root/Krpc-all/Krpc/build/example/callee && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc-all/Krpc/example/callee/Kserver.cc > CMakeFiles/server.dir/Kserver.cc.i
 
 example/callee/CMakeFiles/server.dir/Kserver.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/Kserver.cc.s"
-	cd /root/Krpc/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc/example/callee/Kserver.cc -o CMakeFiles/server.dir/Kserver.cc.s
+	cd /root/Krpc-all/Krpc/build/example/callee && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc-all/Krpc/example/callee/Kserver.cc -o CMakeFiles/server.dir/Kserver.cc.s
 
 example/callee/CMakeFiles/server.dir/__/user.pb.cc.o: example/callee/CMakeFiles/server.dir/flags.make
 example/callee/CMakeFiles/server.dir/__/user.pb.cc.o: ../example/user.pb.cc
 example/callee/CMakeFiles/server.dir/__/user.pb.cc.o: example/callee/CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example/callee/CMakeFiles/server.dir/__/user.pb.cc.o"
-	cd /root/Krpc/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/callee/CMakeFiles/server.dir/__/user.pb.cc.o -MF CMakeFiles/server.dir/__/user.pb.cc.o.d -o CMakeFiles/server.dir/__/user.pb.cc.o -c /root/Krpc/example/user.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc-all/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example/callee/CMakeFiles/server.dir/__/user.pb.cc.o"
+	cd /root/Krpc-all/Krpc/build/example/callee && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example/callee/CMakeFiles/server.dir/__/user.pb.cc.o -MF CMakeFiles/server.dir/__/user.pb.cc.o.d -o CMakeFiles/server.dir/__/user.pb.cc.o -c /root/Krpc-all/Krpc/example/user.pb.cc
 
 example/callee/CMakeFiles/server.dir/__/user.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/__/user.pb.cc.i"
-	cd /root/Krpc/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc/example/user.pb.cc > CMakeFiles/server.dir/__/user.pb.cc.i
+	cd /root/Krpc-all/Krpc/build/example/callee && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc-all/Krpc/example/user.pb.cc > CMakeFiles/server.dir/__/user.pb.cc.i
 
 example/callee/CMakeFiles/server.dir/__/user.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/__/user.pb.cc.s"
-	cd /root/Krpc/build/example/callee && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc/example/user.pb.cc -o CMakeFiles/server.dir/__/user.pb.cc.s
+	cd /root/Krpc-all/Krpc/build/example/callee && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc-all/Krpc/example/user.pb.cc -o CMakeFiles/server.dir/__/user.pb.cc.s
 
 # Object files for target server
 server_OBJECTS = \
@@ -108,20 +108,20 @@ server_EXTERNAL_OBJECTS =
 ../bin/server: example/callee/CMakeFiles/server.dir/Kserver.cc.o
 ../bin/server: example/callee/CMakeFiles/server.dir/__/user.pb.cc.o
 ../bin/server: example/callee/CMakeFiles/server.dir/build.make
-../bin/server: src/libkrpc_core.a
+../bin/server: ../lib/libkrpc_core.a
 ../bin/server: example/callee/CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../bin/server"
-	cd /root/Krpc/build/example/callee && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/Krpc-all/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../bin/server"
+	cd /root/Krpc-all/Krpc/build/example/callee && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/callee/CMakeFiles/server.dir/build: ../bin/server
 .PHONY : example/callee/CMakeFiles/server.dir/build
 
 example/callee/CMakeFiles/server.dir/clean:
-	cd /root/Krpc/build/example/callee && $(CMAKE_COMMAND) -P CMakeFiles/server.dir/cmake_clean.cmake
+	cd /root/Krpc-all/Krpc/build/example/callee && $(CMAKE_COMMAND) -P CMakeFiles/server.dir/cmake_clean.cmake
 .PHONY : example/callee/CMakeFiles/server.dir/clean
 
 example/callee/CMakeFiles/server.dir/depend:
-	cd /root/Krpc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Krpc /root/Krpc/example/callee /root/Krpc/build /root/Krpc/build/example/callee /root/Krpc/build/example/callee/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/Krpc-all/Krpc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Krpc-all/Krpc /root/Krpc-all/Krpc/example/callee /root/Krpc-all/Krpc/build /root/Krpc-all/Krpc/build/example/callee /root/Krpc-all/Krpc/build/example/callee/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/callee/CMakeFiles/server.dir/depend
 

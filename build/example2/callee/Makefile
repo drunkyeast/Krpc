@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/Krpc
+CMAKE_SOURCE_DIR = /root/Krpc-all/Krpc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/Krpc/build
+CMAKE_BINARY_DIR = /root/Krpc-all/Krpc/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /root/Krpc/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/Krpc/build/CMakeFiles /root/Krpc/build/example2/callee//CMakeFiles/progress.marks
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example2/callee/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/Krpc/build/CMakeFiles 0
+	cd /root/Krpc-all/Krpc/build && $(CMAKE_COMMAND) -E cmake_progress_start /root/Krpc-all/Krpc/build/CMakeFiles /root/Krpc-all/Krpc/build/example2/callee//CMakeFiles/progress.marks
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example2/callee/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Krpc-all/Krpc/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example2/callee/clean
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example2/callee/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example2/callee/preinstall
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example2/callee/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example2/callee/preinstall
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example2/callee/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /root/Krpc/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /root/Krpc-all/Krpc/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 example2/callee/CMakeFiles/test_server.dir/rule:
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example2/callee/CMakeFiles/test_server.dir/rule
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example2/callee/CMakeFiles/test_server.dir/rule
 .PHONY : example2/callee/CMakeFiles/test_server.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ test_server: example2/callee/CMakeFiles/test_server.dir/rule
 
 # fast build rule for target.
 test_server/fast:
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/build
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/build
 .PHONY : test_server/fast
 
 __/user.pb.o: __/user.pb.cc.o
@@ -135,7 +135,7 @@ __/user.pb.o: __/user.pb.cc.o
 
 # target to build an object file
 __/user.pb.cc.o:
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/__/user.pb.cc.o
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/__/user.pb.cc.o
 .PHONY : __/user.pb.cc.o
 
 __/user.pb.i: __/user.pb.cc.i
@@ -143,7 +143,7 @@ __/user.pb.i: __/user.pb.cc.i
 
 # target to preprocess a source file
 __/user.pb.cc.i:
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/__/user.pb.cc.i
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/__/user.pb.cc.i
 .PHONY : __/user.pb.cc.i
 
 __/user.pb.s: __/user.pb.cc.s
@@ -151,7 +151,7 @@ __/user.pb.s: __/user.pb.cc.s
 
 # target to generate assembly for a file
 __/user.pb.cc.s:
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/__/user.pb.cc.s
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/__/user.pb.cc.s
 .PHONY : __/user.pb.cc.s
 
 userservice.o: userservice.cc.o
@@ -159,7 +159,7 @@ userservice.o: userservice.cc.o
 
 # target to build an object file
 userservice.cc.o:
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/userservice.cc.o
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/userservice.cc.o
 .PHONY : userservice.cc.o
 
 userservice.i: userservice.cc.i
@@ -167,7 +167,7 @@ userservice.i: userservice.cc.i
 
 # target to preprocess a source file
 userservice.cc.i:
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/userservice.cc.i
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/userservice.cc.i
 .PHONY : userservice.cc.i
 
 userservice.s: userservice.cc.s
@@ -175,7 +175,7 @@ userservice.s: userservice.cc.s
 
 # target to generate assembly for a file
 userservice.cc.s:
-	cd /root/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/userservice.cc.s
+	cd /root/Krpc-all/Krpc/build && $(MAKE) $(MAKESILENT) -f example2/callee/CMakeFiles/test_server.dir/build.make example2/callee/CMakeFiles/test_server.dir/userservice.cc.s
 .PHONY : userservice.cc.s
 
 # Help Target
@@ -204,6 +204,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /root/Krpc/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /root/Krpc-all/Krpc/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

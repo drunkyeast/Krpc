@@ -1,1 +1,1 @@
-/usr/bin/g++ -g -O0 -rdynamic CMakeFiles/test_server.dir/userservice.cc.o CMakeFiles/test_server.dir/__/user.pb.cc.o -o ../../../bin/test_server  ../../src/libkrpc_core.a -lprotobuf -lpthread -lzookeeper_mt -lmuduo_net -lmuduo_base -lglog 
+/usr/bin/c++ -g -O0 CMakeFiles/test_server.dir/userservice.cc.o CMakeFiles/test_server.dir/__/user.pb.cc.o -o ../../../bin/test_server   -L/root/Krpc-all/Krpc/thirdparty/muduo-cpp17/lib  -Wl,-rpath,/root/Krpc-all/Krpc/thirdparty/muduo-cpp17/lib ../../../lib/libkrpc_core.a -lprotobuf -lpthread -lzookeeper_mt -lmuduo_core -lglog 

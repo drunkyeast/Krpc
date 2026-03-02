@@ -11,7 +11,7 @@ add_executable(test_client ${SERVER_SRCS} ${PROTO_SRCS})
 target_link_libraries(test_client krpc_core ${LIBS}) # 这个LIBS是主CMakeLists中set定义的变量, 这个krpc_core是src/CMakeLists里面的add_library定义的目标
 
 #设置编译选项
-target_compile_options(test_client PRIVATE -std=c++11 -Wall)
+target_compile_options(test_client PRIVATE -std=c++17 -Wall)
 
 # 设置 server 可执行文件输出目录
 set_target_properties(test_client PROPERTIES

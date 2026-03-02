@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/Krpc/example2/user.pb.cc" "example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o" "gcc" "example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o.d"
-  "/root/Krpc/example2/caller/calluserservice.cc" "example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o" "gcc" "example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o.d"
+  "/root/Krpc-all/Krpc/example2/user.pb.cc" "example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o" "gcc" "example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o.d"
+  "/root/Krpc-all/Krpc/example2/caller/calluserservice.cc" "example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o" "gcc" "example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/root/Krpc/build/src/CMakeFiles/krpc_core.dir/DependInfo.cmake"
+  "/root/Krpc-all/Krpc/build/src/CMakeFiles/krpc_core.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

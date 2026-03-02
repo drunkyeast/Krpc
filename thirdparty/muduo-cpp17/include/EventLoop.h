@@ -1,0 +1,73 @@
+#pragma once
+
+#include <functional>
+#include <vector>
+#include <atomic>
+#include <memory>
+#include <mutex>
+
+#include "noncopyable.h"
+#include "Timestamp.h"
+#include "CurrentThread.h"
+
+class Channel;
+class Poller;
+
+// 事件循环类 主要包含了两个大模块 Channel Poller(epoll的抽象)
+class EventLoop : noncopyable // 禁止派生类的拷贝操作.
+{
+public:
+    using Functor = std::function<void()>;
+
+    EventLoop();
+    ~EventLoop();
+
+    // 开启事件循环
+    void loop();
+    // 退出事件循环
+    void quit();
+
+    Timestamp pollReturnTime() const { return pollReturnTime_; }
+
+    // 在当前loop中执行
+    void runInLoop(Functor cb);
+    // 把cb放入队列中 唤醒loop所在的线程执行cb, 问题这里的cb是啥? 哪里注册的,啥功能.
+    void queueInLoop(Functor cb);
+
+    // 通过eventfd唤醒loop所在的线程, mainReactor唤醒subReactor
+    void wakeup();
+
+    // EventLoop的方法 => Poller的方法
+    void updateChannel(Channel *channel);
+    void removeChannel(Channel *channel);
+
+    // 判断EventLoop对象是否在自己的线程里, TcpConnection调用loop_->isInLoopThread()
+    bool isInLoopThread() const { return threadId_ == CurrentThread::tid(); } // threadId_为EventLoop创建时的线程id CurrentThread::tid()为当前线程id
+    // threadId_是loop对象的成员变量, CurrentThread是当前CPU运行的线程.
+
+private:
+    void handleRead();        // wake up 给eventfd返回的文件描述符wakeupFd_绑定的事件回调 当wakeup()时 即有事件发生时 调用handleRead()读wakeupFd_的8字节 同时唤醒阻塞的epoll_wait
+    void doPendingFunctors(); // 执行上层回调
+
+    using ChannelList = std::vector<Channel *>;
+
+    bool looping_; // 原子操作 底层通过CAS实现, 这个不需要原子操作, 已修改.
+    std::atomic_bool quit_;    // 标识退出loop循环
+
+    const pid_t threadId_; // 记录当前EventLoop是被哪个线程id创建的 即标识了当前EventLoop的所属线程id
+
+    Timestamp pollReturnTime_; // Poller返回发生事件的Channels的时间点
+    std::unique_ptr<Poller> poller_;
+
+    int wakeupFd_; // 作用：当mainLoop获取一个新用户的Channel 需通过轮询算法选择一个subLoop 通过该成员唤醒subLoop处理Channel
+    std::unique_ptr<Channel> wakeupChannel_;
+
+    ChannelList activeChannels_; // 返回Poller检测到当前有事件发生的所有Channel列表
+
+    // callingPendingFunctors_ 只在 loop 线程中读写 (doPendingFunctors 和 queueInLoop 的
+    // isInLoopThread 分支), 无跨线程竞争. 用 atomic 会在每轮事件循环产生 2 次 xchg 全内存
+    // 屏障 (seq_cst store), 单连接 ping pong 测试中开销约 19%. 原版 muduo 用的是 plain bool.
+    bool callingPendingFunctors_; // 标识当前loop是否有需要执行的回调操作, 普通bool就好了.
+    std::vector<Functor> pendingFunctors_;    // 存储loop需要执行的所有回调操作
+    std::mutex mutex_;                        // 互斥锁 用来保护上面vector容器的线程安全操作
+};

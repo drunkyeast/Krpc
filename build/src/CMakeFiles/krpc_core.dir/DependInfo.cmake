@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/root/Krpc/src/Krpcapplication.cc" "src/CMakeFiles/krpc_core.dir/Krpcapplication.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpcapplication.cc.o.d"
-  "/root/Krpc/src/Krpcchannel.cc" "src/CMakeFiles/krpc_core.dir/Krpcchannel.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpcchannel.cc.o.d"
-  "/root/Krpc/src/Krpcconfig.cc" "src/CMakeFiles/krpc_core.dir/Krpcconfig.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpcconfig.cc.o.d"
-  "/root/Krpc/src/Krpccontroller.cc" "src/CMakeFiles/krpc_core.dir/Krpccontroller.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpccontroller.cc.o.d"
-  "/root/Krpc/src/Krpcheader.pb.cc" "src/CMakeFiles/krpc_core.dir/Krpcheader.pb.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpcheader.pb.cc.o.d"
-  "/root/Krpc/src/Krpcprovider.cc" "src/CMakeFiles/krpc_core.dir/Krpcprovider.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpcprovider.cc.o.d"
-  "/root/Krpc/src/zookeeperutil.cc" "src/CMakeFiles/krpc_core.dir/zookeeperutil.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/zookeeperutil.cc.o.d"
+  "/root/Krpc-all/Krpc/src/Krpcapplication.cc" "src/CMakeFiles/krpc_core.dir/Krpcapplication.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpcapplication.cc.o.d"
+  "/root/Krpc-all/Krpc/src/Krpcchannel.cc" "src/CMakeFiles/krpc_core.dir/Krpcchannel.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpcchannel.cc.o.d"
+  "/root/Krpc-all/Krpc/src/Krpcconfig.cc" "src/CMakeFiles/krpc_core.dir/Krpcconfig.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpcconfig.cc.o.d"
+  "/root/Krpc-all/Krpc/src/Krpccontroller.cc" "src/CMakeFiles/krpc_core.dir/Krpccontroller.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpccontroller.cc.o.d"
+  "/root/Krpc-all/Krpc/src/Krpcheader.pb.cc" "src/CMakeFiles/krpc_core.dir/Krpcheader.pb.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpcheader.pb.cc.o.d"
+  "/root/Krpc-all/Krpc/src/Krpcprovider.cc" "src/CMakeFiles/krpc_core.dir/Krpcprovider.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/Krpcprovider.cc.o.d"
+  "/root/Krpc-all/Krpc/src/zookeeperutil.cc" "src/CMakeFiles/krpc_core.dir/zookeeperutil.cc.o" "gcc" "src/CMakeFiles/krpc_core.dir/zookeeperutil.cc.o.d"
   )
 
 # Targets to which this target links.

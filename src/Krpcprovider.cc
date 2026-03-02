@@ -50,10 +50,10 @@ void KrpcProvider::Run() {
     int port = atoi(KrpcApplication::GetInstance().GetConfig().Load("rpcserverport").c_str());
 
     // 使用muduo网络库，创建地址对象
-    muduo::net::InetAddress address(ip, port);
+    InetAddress address(port, ip);
 
     // 创建TcpServer对象
-    std::shared_ptr<muduo::net::TcpServer> server = std::make_shared<muduo::net::TcpServer>(&event_loop, address, "KrpcProvider");
+    std::shared_ptr<TcpServer> server = std::make_shared<TcpServer>(&event_loop, address, "KrpcProvider");
 
     // 绑定连接回调和消息回调，分离网络连接业务和消息处理业务(这就是muduo库的好处!!)
     server->setConnectionCallback(std::bind(&KrpcProvider::OnConnection, this, std::placeholders::_1));
@@ -89,7 +89,7 @@ void KrpcProvider::Run() {
 }
 
 // 连接回调函数，处理客户端连接事件
-void KrpcProvider::OnConnection(const muduo::net::TcpConnectionPtr &conn) {
+void KrpcProvider::OnConnection(const TcpConnectionPtr &conn) {
     if (!conn->connected()) {
         // 如果连接关闭，则断开连接
         conn->shutdown();
@@ -98,7 +98,7 @@ void KrpcProvider::OnConnection(const muduo::net::TcpConnectionPtr &conn) {
 
 // 消息回调函数，处理客户端发送的RPC请求
 // 从客户端发送RPC请求中解析出service_name, method_name, args_size, 服务器找到对应的service和method, 构建request, 并调用Login等等, 得到response, 再返回(设置回调).
-void KrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr &conn, muduo::net::Buffer *buffer, muduo::Timestamp receive_time) {
+void KrpcProvider::OnMessage(const TcpConnectionPtr &conn, Buffer *buffer, Timestamp receive_time) {
     std::cout << "OnMessage" << std::endl;
 
      // 循环处理缓冲区，解决粘包问题
@@ -177,7 +177,7 @@ void KrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr &conn, muduo::ne
         google::protobuf::Message *response = service->GetResponsePrototype(method).New();
 
         google::protobuf::Closure *done = google::protobuf::NewCallback<KrpcProvider,
-                                                                        const muduo::net::TcpConnectionPtr &,
+                                                                        const TcpConnectionPtr &,
                                                                         google::protobuf::Message *>(this,
                                                                                                      &KrpcProvider::SendRpcResponse,
                                                                                                      conn, response);
@@ -194,7 +194,7 @@ void KrpcProvider::OnMessage(const muduo::net::TcpConnectionPtr &conn, muduo::ne
 }
 
 // 发送RPC响应给客户端
-void KrpcProvider::SendRpcResponse(const muduo::net::TcpConnectionPtr &conn, google::protobuf::Message *response) {
+void KrpcProvider::SendRpcResponse(const TcpConnectionPtr &conn, google::protobuf::Message *response) {
     std::string response_str;
     if (response->SerializeToString(&response_str)) {
         // 构造响应：[4 bytes Total Len] + [Response Data]

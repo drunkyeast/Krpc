@@ -11,14 +11,17 @@ file(GLOB SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.cc)
 # 获取 protobuf 的生成文件
 file(GLOB PROTO_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/*.pb.cc)
 
+# 静态库输出到 Krpc/lib/ 目录, 和 muduo-cpp17 保持一致
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+
 #创建静态库或共享库
 add_library(krpc_core STATIC ${SRC_FILES} ${PROTO_SRCS})
 
 #链接protobuf库
 target_link_libraries(krpc_core PUBLIC protobuf)
 
-#设置头文件的路径
-target_include_directories(krpc_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+#设置头文件的路径 (已移至顶层 include/)
+target_include_directories(krpc_core PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 # 添加编译选项
-target_compile_options(krpc_core PRIVATE -std=c++11 -Wall)
+target_compile_options(krpc_core PRIVATE -std=c++17 -Wall)

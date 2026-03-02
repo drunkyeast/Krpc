@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/Krpc
+CMAKE_SOURCE_DIR = /root/Krpc-all/Krpc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/Krpc/build
+CMAKE_BINARY_DIR = /root/Krpc-all/Krpc/build
 
 # Include any dependencies generated for this target.
 include example2/caller/CMakeFiles/test_client.dir/depend.make
@@ -72,30 +72,30 @@ include example2/caller/CMakeFiles/test_client.dir/flags.make
 example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o: example2/caller/CMakeFiles/test_client.dir/flags.make
 example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o: ../example2/caller/calluserservice.cc
 example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o: example2/caller/CMakeFiles/test_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o"
-	cd /root/Krpc/build/example2/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o -MF CMakeFiles/test_client.dir/calluserservice.cc.o.d -o CMakeFiles/test_client.dir/calluserservice.cc.o -c /root/Krpc/example2/caller/calluserservice.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc-all/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o"
+	cd /root/Krpc-all/Krpc/build/example2/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o -MF CMakeFiles/test_client.dir/calluserservice.cc.o.d -o CMakeFiles/test_client.dir/calluserservice.cc.o -c /root/Krpc-all/Krpc/example2/caller/calluserservice.cc
 
 example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_client.dir/calluserservice.cc.i"
-	cd /root/Krpc/build/example2/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc/example2/caller/calluserservice.cc > CMakeFiles/test_client.dir/calluserservice.cc.i
+	cd /root/Krpc-all/Krpc/build/example2/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc-all/Krpc/example2/caller/calluserservice.cc > CMakeFiles/test_client.dir/calluserservice.cc.i
 
 example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_client.dir/calluserservice.cc.s"
-	cd /root/Krpc/build/example2/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc/example2/caller/calluserservice.cc -o CMakeFiles/test_client.dir/calluserservice.cc.s
+	cd /root/Krpc-all/Krpc/build/example2/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc-all/Krpc/example2/caller/calluserservice.cc -o CMakeFiles/test_client.dir/calluserservice.cc.s
 
 example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o: example2/caller/CMakeFiles/test_client.dir/flags.make
 example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o: ../example2/user.pb.cc
 example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o: example2/caller/CMakeFiles/test_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o"
-	cd /root/Krpc/build/example2/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o -MF CMakeFiles/test_client.dir/__/user.pb.cc.o.d -o CMakeFiles/test_client.dir/__/user.pb.cc.o -c /root/Krpc/example2/user.pb.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/Krpc-all/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o"
+	cd /root/Krpc-all/Krpc/build/example2/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o -MF CMakeFiles/test_client.dir/__/user.pb.cc.o.d -o CMakeFiles/test_client.dir/__/user.pb.cc.o -c /root/Krpc-all/Krpc/example2/user.pb.cc
 
 example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_client.dir/__/user.pb.cc.i"
-	cd /root/Krpc/build/example2/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc/example2/user.pb.cc > CMakeFiles/test_client.dir/__/user.pb.cc.i
+	cd /root/Krpc-all/Krpc/build/example2/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Krpc-all/Krpc/example2/user.pb.cc > CMakeFiles/test_client.dir/__/user.pb.cc.i
 
 example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_client.dir/__/user.pb.cc.s"
-	cd /root/Krpc/build/example2/caller && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc/example2/user.pb.cc -o CMakeFiles/test_client.dir/__/user.pb.cc.s
+	cd /root/Krpc-all/Krpc/build/example2/caller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Krpc-all/Krpc/example2/user.pb.cc -o CMakeFiles/test_client.dir/__/user.pb.cc.s
 
 # Object files for target test_client
 test_client_OBJECTS = \
@@ -108,20 +108,20 @@ test_client_EXTERNAL_OBJECTS =
 ../bin/test_client: example2/caller/CMakeFiles/test_client.dir/calluserservice.cc.o
 ../bin/test_client: example2/caller/CMakeFiles/test_client.dir/__/user.pb.cc.o
 ../bin/test_client: example2/caller/CMakeFiles/test_client.dir/build.make
-../bin/test_client: src/libkrpc_core.a
+../bin/test_client: ../lib/libkrpc_core.a
 ../bin/test_client: example2/caller/CMakeFiles/test_client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../bin/test_client"
-	cd /root/Krpc/build/example2/caller && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_client.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/Krpc-all/Krpc/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../bin/test_client"
+	cd /root/Krpc-all/Krpc/build/example2/caller && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example2/caller/CMakeFiles/test_client.dir/build: ../bin/test_client
 .PHONY : example2/caller/CMakeFiles/test_client.dir/build
 
 example2/caller/CMakeFiles/test_client.dir/clean:
-	cd /root/Krpc/build/example2/caller && $(CMAKE_COMMAND) -P CMakeFiles/test_client.dir/cmake_clean.cmake
+	cd /root/Krpc-all/Krpc/build/example2/caller && $(CMAKE_COMMAND) -P CMakeFiles/test_client.dir/cmake_clean.cmake
 .PHONY : example2/caller/CMakeFiles/test_client.dir/clean
 
 example2/caller/CMakeFiles/test_client.dir/depend:
-	cd /root/Krpc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Krpc /root/Krpc/example2/caller /root/Krpc/build /root/Krpc/build/example2/caller /root/Krpc/build/example2/caller/CMakeFiles/test_client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /root/Krpc-all/Krpc/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /root/Krpc-all/Krpc /root/Krpc-all/Krpc/example2/caller /root/Krpc-all/Krpc/build /root/Krpc-all/Krpc/build/example2/caller /root/Krpc-all/Krpc/build/example2/caller/CMakeFiles/test_client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example2/caller/CMakeFiles/test_client.dir/depend
 

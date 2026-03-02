@@ -1,4 +1,4 @@
-# Install script for directory: /root/Krpc/example2
+# Install script for directory: /root/Krpc-all/Krpc/example2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/root/Krpc/build/example2/callee/cmake_install.cmake")
-  include("/root/Krpc/build/example2/caller/cmake_install.cmake")
+  include("/root/Krpc-all/Krpc/build/example2/callee/cmake_install.cmake")
+  include("/root/Krpc-all/Krpc/build/example2/caller/cmake_install.cmake")
 
 endif()
 

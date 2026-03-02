@@ -1,4 +1,4 @@
-# Install script for directory: /root/Krpc/example/callee
+# Install script for directory: /root/Krpc-all/Krpc/example/callee
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

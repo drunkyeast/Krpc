@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "../../lib/libkrpc_core.a"
+  "../../lib/libkrpc_core.pdb"
   "CMakeFiles/krpc_core.dir/Krpcapplication.cc.o"
   "CMakeFiles/krpc_core.dir/Krpcapplication.cc.o.d"
   "CMakeFiles/krpc_core.dir/Krpcchannel.cc.o"
@@ -13,8 +15,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/krpc_core.dir/Krpcprovider.cc.o.d"
   "CMakeFiles/krpc_core.dir/zookeeperutil.cc.o"
   "CMakeFiles/krpc_core.dir/zookeeperutil.cc.o.d"
-  "libkrpc_core.a"
-  "libkrpc_core.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
